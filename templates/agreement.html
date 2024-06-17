@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자동이체 이용 신청서</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <style>
+        textarea {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+<div class="container mt-5">
+    <h2 class="mb-4 text-center">자동이체 이용 신청서</h2>
+    <form id="application-form" action="#" method="post">
+        <!-- 기존의 form 필드 -->
+        <fieldset class="form-group text-center">
+            <label for="신청구분">[신청 구분 택1:</label>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="신청구분" id="신규" value="신규">
+                <label class="form-check-label" for="신규">신규</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="신청구분" id="변경" value="변경">
+                <label class="form-check-label" for="변경">변경</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="신청구분" id="해지" value="해지">
+                <label class="form-check-label" for="해지">해지</label>
+                ]
+            </div>
+        </fieldset>
+
+        <fieldset class="form-group">
+            <legend class="col-form-label">◆ 수납기관 및 요금정보[수납기관 기재란]</legend>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <th>수납기관명</th>
+                        <td>착한식판</td>
+                        <th>대표자명</th>
+                        <td>황 지 영</td>
+                    </tr>
+                    <tr>
+                        <th>사업장 주소</th>
+                        <td colspan="3">경기도 하남시 미사대로 550</td>
+                    </tr>
+                    <tr>
+                        <th>사업자등록번호</th>
+                        <td>406-16-00946</td>
+                        <th>자동이체사유</th>
+                        <td>식판토탈케어</td>
+                    </tr>
+                    <tr>
+                        <th>출금통장 기재내역</th>
+                        <td>착한식판 or 나이스페이먼츠</td>
+                        <th>수납 요금</th>
+                        <td>11,000 원</td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">납부자 번호(고객번호)</th>
+                        <th colspan="2">이체 시작 월</th>
+                    </tr>
+                    <tr>
+                        <th colspan="2"></th>
+                        <td colspan="2">매월 01 일</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <legend class="col-form-label">◆ 자동이체 신청정보[신청인 기재란]</legend>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <th>원아명</th>
+                        <td><input type="text" class="form-control" id="원아명" name="원아명"></td>
+                        <th>예금(카드)주와의 관계</th>
+                        <td>미 기재 항목</td>
+                    </tr>
+                    <tr>
+                        <th>원 명</th>
+                        <td><input type="text" class="form-control" id="원명" name="원명"></td>
+                        <th>반 명</th>
+                        <td><input type="text" class="form-control" id="반명" name="반명"></td>
+                    </tr>
+                    <tr>
+                        <th colspan="4">자동이체정보</th>
+                    </tr>
+                    <tr>
+                        <th>출금이체 결제수단</th>
+                        <td colspan="3">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="결제수단" id="계좌" value="계좌">
+                                <label class="form-check-label" for="계좌">계좌</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="결제수단" id="신용카드" value="신용카드">
+                                <label class="form-check-label" for="신용카드">신용카드</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="결제수단" id="체크카드" value="체크카드">
+                                <label class="form-check-label" for="체크카드">체크카드</label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>예금주명<br>(신용카드 발급자명)</th>
+                        <td><input type="text" class="form-control" id="예금주명" name="예금주명"></td>
+                        <th>예금(카드)주 생년월일<br>(주민번호 앞 6자리)</th>
+                        <td><input type="text" class="form-control" id="생년월일" name="생년월일" placeholder="주민번호 앞 6자리"></td>
+                    </tr>
+                    <tr>
+                        <th>은행(카드사)명</th>
+                        <td><input type="text" class="form-control" id="은행명" name="은행명"></td>
+                        <th>계좌(카드)번호</th>
+                        <td><input type="text" class="form-control" id="계좌번호" name="계좌번호"></td>
+                    </tr>
+                    <tr>
+                        <th>예금주(카드) 휴대폰번호</th>
+                        <td><input type="tel" class="form-control" id="휴대폰번호" name="휴대폰번호" placeholder="숫자만 입력"></td>
+                        <th>카드 유효기간</th>
+                        <td>
+                            <input type="text" class="form-control d-inline-block" id="월" name="카드유효기간_월" style="width: 40%;">월 /
+                            <input type="text" class="form-control d-inline-block" id="년" name="카드유효기간_년" style="width: 40%;">년
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p id="caution">※ 평생계좌(휴대폰번호, 주민번호, 사업자번호 등)는 출금이 불가능합니다.</p>
+        </fieldset>
+
+        <fieldset class="form-group">
+            <legend class="col-form-label"><strong>자동이체 약관</strong></legend>
+            <textarea class="form-control text-start" name="자동이체_약관" rows="6">1. 귀하의 계좌에서 자동으로 출금되어 요금 납부처리되며, 거래은행(카드사)의 업무시간과 이용기관의 수납처리시간에 따라 당일 출금되지 않을 수도 있습니다.
+2. 예금부족, 해지, 거래중지, 정지계좌 등으로 출금이 되지 않을 경우 요금미납으로 처리되오니 이점 유의하시기 바랍니다.
+3. 자동이체를 신청하시면 납기일 전 은행의 예금 잔액(한도)을 반드시 확인하시기 바랍니다.
+4. 이체예정일에 잔액 부족 시 1회에 한해 재출금 처리됩니다.
+5. 출금이체 신청 해지 및 해지에 대한 사항은 해당 요금 청구기관으로 문의 바랍니다.
+6. 신청이 완료된 이후라도 이용기관의 사정에 따라 자동이체가 처리되지 않을 수 있습니다.
+7. 계좌를 거래 금융기관에 지급정지(해지) 할 경우 자동적으로 해지 처리 됩니다.
+8. 기타사항은 이용업체와 이용자가 협의하여 정합니다.</textarea>
+        </fieldset>
+
+        <fieldset class="form-group">
+            <legend class="col-form-label text-center"><strong>개인정보 제공 동의</strong></legend>
+            <textarea class="form-control text-start" name="개인정보_제공_동의" rows="6">1. 수납기관이 보험료(이용료) 납부를 위한 개인정보를 금융기관 등에 제공하는데 동의합니다.
+2. 개인정보를 제공받는 자 : 착한식판
+3. 개인정보를 제공받는 자의 개인정보 이용목적 : 요금납부 업무
+4. 제공하는 개인정보의 항목 : 성명, 생년월일, 연락처, 금융기관명, 계좌번호 등
+5. 개인정보를 제공받는 자의 개인정보 보유 및 이용기간 : 자동이체 서비스 신청기간 동안
+6. 신청자는 개인정보 제공을 거부할 수 있으며, 이 경우 서비스 이용이 제한될 수 있습니다.</textarea>
+        </fieldset>
+
+        <fieldset class="form-group">
+            <legend class="col-form-label text-center"><strong>서명란</strong></legend>
+            <p>본인은 상기 자동이체 약관에 동의하며 자동이체를 신청합니다.</p>
+            <div class="signature-box" style="border: 1px solid #000; height: 150px; margin-bottom: 10px;"></div>
+        </fieldset>
+
+        <fieldset class="form-group">
+            <legend class="col-form-label text-center"><strong>동의란</strong></legend>
+            <p>본인은 상기 자동이체 약관 및 개인정보 제공에 동의합니다.</p>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="동의" name="동의">
+                <label class="form-check-label" for="동의">동의합니다</label>
+            </div>
+        </fieldset>
+
+        <div class="text-center mt-4">
+            <button type="submit" class="btn btn-primary">신청서 제출</button>
+            <button type="button" class="btn btn-secondary" id="작성완료">작성완료</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const now = new Date();
+        const year = now.getFullYear();
+        const month = String(now.getMonth() + 1).padStart(2, '0');
+        const day = String(now.getDate()).padStart(2, '0');
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        document.getElementById('current-date-time').innerText = `${year}-${month}-${day} ${hours}:${minutes}`;
+    });
+
+    document.getElementById('application-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const formData = new FormData(this);
+
+        if (!formData.get('동의')) {
+            alert("자동이체 약관 및 개인정보 제공에 동의해야 합니다.");
+            return;
+        }
+
+        fetch(this.action, {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            alert("신청서가 제출되었습니다.");
+            console.log(data);
+        })
+        .catch(error => {
+            console.error("Error:", error);
+        });
+    });
+
+    document.getElementById('작성완료').addEventListener('click', function() {
+        const form = document.getElementById('application-form');
+        const formData = new FormData(form);
+
+        fetch('/submit_form', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            alert("PDF가 Google Drive에 저장되었습니다.");
+            console.log(data);
+        })
+        .catch(error => {
+            console.error("Error:", error);
+        });
+    });
+</script>
+</body>
+</html>

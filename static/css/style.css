@@ -1,0 +1,60 @@
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+header {
+    background: url('../images/header_img.PNG') no-repeat center center;
+    background-size: cover;
+    color: white;
+}
+#contact{
+    background: url('../images/contact_info2.png') no-repeat center center;
+    background-size: cover;
+    color: white;
+}
+
+b {
+    color: blue;
+}
+
+.table th {
+    vertical-align: middle;
+    text-align: center;
+    background-color: rgb(244, 247, 247);
+}
+
+.table td {
+    vertical-align: middle;
+    text-align: center;
+    font-weight: bold;
+}
+
+#caution {
+    color: red;
+    font-weight: bold;
+}
+
+textarea {
+    text-align: left;
+}
+
+.nav-item {
+    padding: 0 5px;
+}
+
+.navbar.transparent {
+    background-color: rgba(0, 123, 255, 0.8); /* 투명한 배경색 */
+    transition: background-color 0.5s ease;
+}
+
+
+/* h1.display-4 {
+    color: orange;
+} */
+
+.fixed-subscribe-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
